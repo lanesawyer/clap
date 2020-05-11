@@ -377,7 +377,7 @@ impl<'help> Arg<'help> {
     ///             .arg(Arg::with_name("test")
     ///                     .long("test")
     ///                     .aliases(&["do-stuff", "do-tests", "tests"])
-    ///                     .help("the file to add")
+    ///                     .about("the file to add")
     ///                     .required(false))
     ///             .get_matches_from(vec![
     ///                 "prog", "--do-tests"
@@ -452,20 +452,6 @@ impl<'help> Arg<'help> {
             self.aliases = Some(names.iter().map(|n| (*n, true)).collect::<Vec<_>>());
         }
         self
-    }
-
-    /// See [`Arg::about`](./struct.Arg.html#method.about)
-    #[deprecated(since = "3.0.0", note = "Please use `about` method instead")]
-    #[inline]
-    pub fn help(self, h: &'help str) -> Self {
-        self.about(h)
-    }
-
-    /// See [`Arg::long_about`](./struct.Arg.html#method.long_about)
-    #[deprecated(since = "3.0.0", note = "Please use `long_about` method instead")]
-    #[inline]
-    pub fn long_help(self, h: &'help str) -> Self {
-        self.long_about(h)
     }
 
     /// Sets the short help text of the argument that will be displayed to the user when they print
@@ -2768,7 +2754,7 @@ impl<'help> Arg<'help> {
     ///         .long("long-option")
     ///         .short('o')
     ///         .takes_value(true)
-    ///         .help("Some help and text"))
+    ///         .about("Some help and text"))
     ///     .arg(Arg::with_name("b")
     ///         .long("other-option")
     ///         .short('O')
@@ -2777,7 +2763,7 @@ impl<'help> Arg<'help> {
     ///                             // all we have to do is give it a value lower than 999.
     ///                             // Any other args with a value of 1 will be displayed
     ///                             // alphabetically with this one...then 2 values, then 3, etc.
-    ///         .help("I should be first!"))
+    ///         .about("I should be first!"))
     ///     .get_matches_from(vec![
     ///         "prog", "--help"
     ///     ]);
@@ -3351,7 +3337,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::with_name("cfg")
     ///         .long("config")
     ///         .setting(ArgSettings::Hidden)
-    ///         .help("Some help text describing the --config arg"))
+    ///         .about("Some help text describing the --config arg"))
     ///     .get_matches_from(vec![
     ///         "prog", "--help"
     ///     ]);
@@ -3543,7 +3529,7 @@ impl<'help> Arg<'help> {
     ///         .short('o')
     ///         .settings(&[ArgSettings::TakesValue, ArgSettings::NextLineHelp])
     ///         .value_names(&["value1", "value2"])
-    ///         .help("Some really long help and complex\n\
+    ///         .about("Some really long help and complex\n\
     ///                help that makes more sense to be\n\
     ///                on a line after the option"))
     ///     .get_matches_from(vec![
@@ -3945,7 +3931,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::with_name("cfg")
     ///         .long("config")
     ///         .hidden_short_help(true)
-    ///         .help("Some help text describing the --config arg"))
+    ///         .about("Some help text describing the --config arg"))
     ///     .get_matches_from(vec![
     ///         "prog", "-h"
     ///     ]);
@@ -3972,7 +3958,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::with_name("cfg")
     ///         .long("config")
     ///         .hidden_short_help(true)
-    ///         .help("Some help text describing the --config arg"))
+    ///         .about("Some help text describing the --config arg"))
     ///     .get_matches_from(vec![
     ///         "prog", "--help"
     ///     ]);
@@ -4023,7 +4009,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::with_name("cfg")
     ///         .long("config")
     ///         .hidden_long_help(true)
-    ///         .help("Some help text describing the --config arg"))
+    ///         .about("Some help text describing the --config arg"))
     ///     .get_matches_from(vec![
     ///         "prog", "--help"
     ///     ]);
@@ -4050,7 +4036,7 @@ impl<'help> Arg<'help> {
     ///     .arg(Arg::with_name("cfg")
     ///         .long("config")
     ///         .hidden_long_help(true)
-    ///         .help("Some help text describing the --config arg"))
+    ///         .about("Some help text describing the --config arg"))
     ///     .get_matches_from(vec![
     ///         "prog", "-h"
     ///     ]);
