@@ -1,8 +1,14 @@
-## Unreleased
+<a name="v3.0.0-beta.1"></a>
+## v3.0.0-beta.1 (2020-05-03)
+
+#### BREAKING CHANGES
+
+* **Renamed**
+  * `Arg::help` => `Arg::about`
 
 #### Minimum Required Rust
 
-* As of this release, `clap` requires `rustc 1.36.0` or greater.
+* As of this release, `clap` requires `rustc 1.40.0` or greater.
 
 <a name="v2.29.2"></a>
 ## v2.29.2 (2018-01-16)
