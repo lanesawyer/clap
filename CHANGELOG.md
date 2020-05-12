@@ -3,8 +3,19 @@
 
 #### BREAKING CHANGES
 
-* **Renamed**
+* **Renamed Methods**
   * `Arg::help` => `Arg::about`
+  * `Arg::from_usage` => `Arg::from`
+  * `Arg::set` => `Arg::setting`
+  * `Arg::unset` => `Arg::unset_setting`
+  * `App::from_yaml` => `App::from`
+  * `App::arg_from_usage` => `App::arg`
+  * `App::help` => `App::override_help`
+  * `App::usage` => `App::override_usage`
+  * `App::template` => `App::help_template`
+  * `App::get_matches_safe` => `App::try_get_matches`
+  * `App::get_matches_from_safe` => `App::try_get_matches_from`
+  * `App::get_matches_from_safe_borrow` => `App::try_get_matches_from_mut`
 
 #### Minimum Required Rust
 

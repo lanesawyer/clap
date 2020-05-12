@@ -19,26 +19,6 @@
 
 ### If you use `Arg::multiple(true)`
 
-
-# Deprecations
-
-## Simple Renames
-
-### App
-
-- `App::get_matches_safe` -> `App::try_get_matches` 
-- `App::get_matches_from_safe` -> `App::try_get_matches_from` 
-- `App::get_matches_safe_borrow` -> `App::try_get_matches_from_mut` 
-- `App::usage` -> `App::override_usage` 
-- `App::help` -> `App::override_help`
-- `App::template` -> `App::help_template`
-
-### Arg
-
-- `Arg::unset` -> `Arg::unset_setting` 
-- `Arg::set` -> `Arg::setting` 
-
-
 ## Structural Changes
 
 ### App
@@ -48,7 +28,6 @@
 - `App::help_message` -> `App::mut_arg`
 - `App::help_short` -> `App::mut_arg`
 - `App::args_from_usage` -> `App::args(&str)`
-- `App::arg_from_usage` -> `App::arg(&str)`
 - `App::write_help` -> `&self` -> `&mut self` (#808)
 - `App::gen_completions` -> `clap_completions::generate`
 - `App::gen_completions_to` -> `clap_completions::generate_to`
@@ -56,16 +35,9 @@
 - `App::unset_settings` -> `App::unset_setting(Setting1 | Setting2)`
 - `App::global_settings` -> `App::global_setting(Setting1 | Setting2)`
 
-### Arg
-
-- `Arg::from_usage` -> `Arg::from(&str)` 
-
 # Additional APIs
 
 ## App
 
 * `App::mut_arg`
 * `App::unset_global_setting`
-
-## Arg
-
